@@ -8,7 +8,10 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar Placeholder="Search ISBN, Author or Title"/>
+            <SearchBar x:Name="bookSearchBar"
+                       Placeholder="Search ISBN, Author or Title"
+                       SearchCommand="{Binding SearchCommand}"
+                       SearchCommandParameter="{Binding Text, Source={x:Reference bookSearchBar}}"/>
             <ListView>
                 <ListView.ItemTemplate>
                     <DataTemplate>
