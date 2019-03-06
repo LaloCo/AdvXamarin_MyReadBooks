@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 
 namespace MyReadBooks.Views
@@ -10,6 +9,11 @@ namespace MyReadBooks.Views
         public BooksPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
         }
     }
 }

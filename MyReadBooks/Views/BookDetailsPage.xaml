@@ -7,12 +7,12 @@
                      IsDestructive="true"/>
     </ContentPage.ToolbarItems>
     
-    <ContentPage.Content>
+    <StackLayout>
         <Label FontSize="25"
                FontAttributes="Bold"/>
         <Label FontSize="20"
                TextColor="Silver"/>
         <Label FontSize="15"
                TextColor="Green"/>
-    </ContentPage.Content>
+    </StackLayout>
 </ContentPage>

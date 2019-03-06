@@ -12,6 +12,7 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.5.0.169047" />
     <PackageReference Include="Prism.Unity.Forms" Version="7.1.0.431" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="MainPage.xaml" />
@@ -22,5 +23,7 @@
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Models\" />
+    <Folder Include="ViewModels\Helpers\" />
   </ItemGroup>
 </Project>
