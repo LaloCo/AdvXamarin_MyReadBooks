@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyReadBooks.Views.NewBookPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save"/>
+        <ToolbarItem Text="Save"
+                     Command="{Binding SaveCommand}"
+                     CommandParameter="{Binding SelectedItem, Source={x:Reference booksListView}}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
@@ -12,10 +14,13 @@
                        Placeholder="Search ISBN, Author or Title"
                        SearchCommand="{Binding SearchCommand}"
                        SearchCommandParameter="{Binding Text, Source={x:Reference bookSearchBar}}"/>
-            <ListView>
+            <ListView x:Name="booksListView"
+                      ItemsSource="{Binding Books}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell/>
+                        <ImageCell ImageSource="{Binding Image_url}"
+                                   Text="{Binding Title}"
+                                   Detail="{Binding Author_Name}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

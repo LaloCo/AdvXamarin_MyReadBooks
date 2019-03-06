@@ -8,10 +8,12 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <ListView>
+        <ListView ItemsSource="{Binding Books}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell/>
+                    <ImageCell ImageSource="{Binding Image_url}"
+                               Text="{Binding Title}"
+                               Detail="{Binding Author_Name}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

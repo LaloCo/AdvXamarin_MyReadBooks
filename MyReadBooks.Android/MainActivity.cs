@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
+using System.IO;
 
 namespace MyReadBooks.Droid
 {
@@ -21,7 +22,11 @@ namespace MyReadBooks.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App(new AndroidInitializer()));
+
+            string fileName = "books.db3";
+            string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+            string fullPath = Path.Combine(folderPath, fileName);
+            LoadApplication(new App(fullPath, new AndroidInitializer()));
         }
 
         public class AndroidInitializer : IPlatformInitializer

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using SQLite;
 
 namespace MyReadBooks.Models
 {
@@ -94,12 +95,24 @@ namespace MyReadBooks.Models
     [XmlRoot(ElementName = "best_book")]
     public class Best_book
     {
+        [XmlIgnore]
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [Ignore]
         [XmlElement(ElementName = "id")]
-        public Id Id { get; set; }
+        public Id Goodreads_Id { get; set; }
         [XmlElement(ElementName = "title")]
         public string Title { get; set; }
+        [Ignore]
         [XmlElement(ElementName = "author")]
         public Author Author { get; set; }
+        [XmlIgnore]
+        private string author_name;
+        public string Author_Name
+        {
+            get { return author_name; }
+            set { author_name = value; }
+        }
         [XmlElement(ElementName = "image_url")]
         public string Image_url { get; set; }
         [XmlElement(ElementName = "small_image_url")]

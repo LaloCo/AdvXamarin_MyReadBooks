@@ -10,5 +10,10 @@ namespace MyReadBooks.Views
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
     }
 }
