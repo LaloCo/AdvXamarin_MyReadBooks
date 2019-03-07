@@ -13,13 +13,25 @@ namespace MyReadBooks.ViewModels
     {
         public ObservableCollection<Best_book> Books { get; set; }
         public ICommand NewBookCommand { get; set; }
+        public ICommand BookDetailsCommand { get; set; }
         INavigationService _navigationService;
         public BooksVM(INavigationService navigationService)
         {
             _navigationService = navigationService;
             NewBookCommand = new DelegateCommand(NewBookAction);
+            BookDetailsCommand = new DelegateCommand<object>(GoToDetails, CanGoToDetails);
             Books = new ObservableCollection<Best_book>();
             ReadSavedBooks();
+        }
+
+        bool CanGoToDetails(object arg)
+        {
+            return arg != null;
+        }
+
+        void GoToDetails(object obj)
+        {
+
         }
 
         private void ReadSavedBooks()
