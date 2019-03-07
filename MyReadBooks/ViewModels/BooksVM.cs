@@ -6,6 +6,7 @@ using Prism.AppModel;
 using Prism.Commands;
 using Prism.Navigation;
 using SQLite;
+using Xamarin.Forms;
 
 namespace MyReadBooks.ViewModels
 {
@@ -29,9 +30,13 @@ namespace MyReadBooks.ViewModels
             return arg != null;
         }
 
-        void GoToDetails(object obj)
+        async void GoToDetails(object obj)
         {
+            Best_book selectedBook = (obj as ListView).SelectedItem as Best_book;
 
+            var parameter = new NavigationParameters();
+            parameter.Add("selected_book", selectedBook);
+            await _navigationService.NavigateAsync("BookDetailsPage", parameter);
         }
 
         private void ReadSavedBooks()

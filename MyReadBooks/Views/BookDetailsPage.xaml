@@ -4,15 +4,17 @@
              x:Class="MyReadBooks.Views.BookDetailsPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Delete"
-                     IsDestructive="true"/>
+                     IsDestructive="true"
+                     Command="{Binding DeleteCommand}"/>
     </ContentPage.ToolbarItems>
     
-    <StackLayout>
-        <Label FontSize="25"
+    <StackLayout Margin="16">
+        <Image Source="{Binding BookImageUrl}"/>
+        <Label Text="{Binding BookName}"
+               FontSize="25"
                FontAttributes="Bold"/>
-        <Label FontSize="20"
+        <Label Text="{Binding BookAuthor}"
+               FontSize="20"
                TextColor="Silver"/>
-        <Label FontSize="15"
-               TextColor="Green"/>
     </StackLayout>
 </ContentPage>
