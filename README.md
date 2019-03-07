@@ -1,15 +1,17 @@
-## Prism Example for [my and The Learn Programming Academy's Advanced Xamarin Course on Udemy](https://www.udemy.com/the-advanced-xamarin-developer-masterclass/?couponCode=GITHUB)
+# Prism Example
+
+This is the source code for [my and Learn Programming Academy's Advanced Xamarin Masterclass on Udemy](https://www.udemy.com/the-advanced-xamarin-developer-masterclass/?couponCode=GITHUB)
 
 This is a *Read Books* application that uses the [Goodreads API](https://www.goodreads.com/api) to search for books by Author, Title or ISBN.
 
 Books can later be saved into a local SQLite database, retrieved, listed, and have their details shown.
 
-### Lecture's Source code
+## Lecture's Source code
 
 Check the branches for the source code for each lecture seen in the course. Each branch contains the state of the project by the end of the corresponding lecture.
 Notice the naming to identify the corresponding branch: AdvXamarin-[Some_Number]- [Lecture_Name]
 
-### Branches
+## Branches
 
 - **AdvXamarin-1320-PrismSetup**: During this lecture you will reference the necessary packages to start using the Prism framework with Unity, and setup the three projects that exist in the solution to use Prism
 - **AdvXamarin-1340-ViewsAndVMs**: In this lecture you will define the views and the view models that we will need to list the read books, add new books to the list, and display the details for selected books. finally you will relate the views to their respective view models in the way that Prism requires, by registering the types fpr navigation
