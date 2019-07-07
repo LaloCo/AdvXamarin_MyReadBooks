@@ -5,6 +5,7 @@ using MyReadBooks.Models;
 using Prism.AppModel;
 using Prism.Commands;
 using Prism.Navigation;
+using Prism.Services;
 using SQLite;
 using Xamarin.Forms;
 
@@ -16,9 +17,11 @@ namespace MyReadBooks.ViewModels
         public ICommand NewBookCommand { get; set; }
         public ICommand BookDetailsCommand { get; set; }
         INavigationService _navigationService;
-        public BooksVM(INavigationService navigationService)
+        IPageDialogService _dialogService;
+        public BooksVM(INavigationService navigationService, IPageDialogService dialogService)
         {
             _navigationService = navigationService;
+            _dialogService = dialogService;
             NewBookCommand = new DelegateCommand(NewBookAction);
             BookDetailsCommand = new DelegateCommand<object>(GoToDetails, CanGoToDetails);
             Books = new ObservableCollection<Best_book>();
@@ -55,6 +58,7 @@ namespace MyReadBooks.ViewModels
 
         private async void NewBookAction()
         {
+            await _dialogService.DisplayAlertAsync("Navigating", "Navigation in progress...", "Awesome!");
             await _navigationService.NavigateAsync("NewBookPage");
         }
 

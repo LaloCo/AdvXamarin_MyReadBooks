@@ -3,6 +3,7 @@ using MyReadBooks.ViewModels;
 using MyReadBooks.Views;
 using Prism;
 using Prism.Ioc;
+using Prism.Services;
 using Prism.Unity;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
